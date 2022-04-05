@@ -1,0 +1,42 @@
+
+{% extends 'main/base.html' %}
+
+{% load static %}
+
+{% block title %} Index Page {% endblock %}
+
+{% block body %}
+  {% include 'main/navigation_bar.html' %}
+
+ <div class="row">
+    <div class="col-sm-12">
+      <div class="jumbotron">
+       <h1>your_sneakers</h1>
+       <p>One of the best online stores in Almaty, luxury quality, cooperation with the largest companies</p>
+     </div>
+   </div>
+ </div>
+<div class="row">
+  <div class="col-sm-6">
+    <h1 class="dicplay-4">Online Store</h1>
+    <p>your_sneakers store is the largest online store in Almaty, selling only quality goods. for all questions, contact whatsapp +77714550044 </p>
+    </div>
+    <div class="col-sm-6">
+      <img src="{% static 'main/sneakers.jpg' %}" alt="Shop Logo">
+     </<div>
+   </div>
+   <div class="row mt-4">
+
+     <div class="col-sm-12">
+       <h1 class="dicplay-4" >your_sneakers</h1>
+       <p>Online purchase of sneakers from top brands in our store is an opportunity to receive an order anywhere in the country as soon as possible, take a neighboring size to try on, and not overpay for delivery from abroad</p>
+     </div>
+    <div class="row mt-4">
+      <div class="col-sm-12">
+         <img src="{% static 'main/Online_Store.jpg' %}" alt="Online Store">
+      </div>
+
+
+    </div>
+
+{% endblock %}

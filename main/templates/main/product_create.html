@@ -1,0 +1,26 @@
+{% extends 'main/base.html' %}
+
+{% block title %} Create Product Page {% endblock %}
+
+{% block body %}
+  {% include 'main/navigation_bar.html' %}
+
+  <div class="row">
+    <div class="col-sm-12">
+      <form class="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="text" name="name" placeholder="Название">
+        <input type="text" name="description" placeholder="Описание">
+        <input type="" name="cost" placeholder="Цена">
+        <select class="" name="cost_type">
+          {% for o in options %}
+          <option value="{{ o.id }}">{{ o.name }}</option>
+          {% endfor %}
+
+        </select>
+        <input type="file" name="image">
+        <input type="submit" name="submit" value="Add new Product">
+      </form>
+    </div>
+  </div>
+{% endblock %}

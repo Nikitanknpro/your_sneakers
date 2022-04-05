@@ -1,0 +1,35 @@
+
+<div class="row">
+  <div class="col-sm-12">
+    <nav class="navbar navbar-expand-sm bg-light">
+
+      <!-- Links -->
+      <ul class="navbar-nav">
+        {% if user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'main:logout_view' %}">Logout</a>
+        </li>
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'main:login_page' %}">Login Page</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'main:reqister_view' %}">Reqister Page</a>
+        </li>
+        {% endif %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'main:product_page' %}">Products Page</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'main:product_create_page' %}">Products Create Page</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'main:brands_page' %}">All Brands Page</a>
+        </li>
+      </ul>
+
+    </nav>
+
+  </div>
+
+</div>

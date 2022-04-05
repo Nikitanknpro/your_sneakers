@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %}
+
+{% block title %} Index Page {% endblock %}
+
+{% block body %}
+  {% include 'main/navigation_bar.html' %}
+
+   <div class="row mt-4 pt-4">
+     <div class="col-sm-12">
+       <h1>Hello, {{ user.username }}</h1>
+       <h1>Is stuff? {{ user.is_staff }}</h1>
+       <h1>Is superuser? {{ user.is_superuser }}</h1>
+
+     </div>
+
+   </div>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'main/base.html' %}
+
+{% block title %} Create Product Page {% endblock %}
+
+{% block body %}
+  {% include 'main/navigation_bar.html' %}
+
+  <div class="row">
+    <div class="col-sm-6">
+      <img src="{{MEDIA_URL}}{{product.image}}" alt="Product Image">
+        </div>
+    <div class="col-sm-6">
+      <table>
+        <tr>
+          <td>Название</td>
+          <td>{{ product.name }}</td>
+        </tr>
+        <tr>
+          <td>Описание</td>
+          <td>{{ product.description }}</td>
+        </tr>
+        <tr>
+          <td>Цена</td>
+          <td>{{ product.cost }} {{ product.cost_type.name }}</td>
+        </tr>
+      </table>
+
+    </div>
+  </div>
+{% endblock %}

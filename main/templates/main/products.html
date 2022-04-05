@@ -1,0 +1,46 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Products Page
+{% endblock %}
+
+{% block body %}
+
+  {% include "main/navigation_bar.html" %}
+
+  <div class="row">
+    <div class="col-sm-12">
+      {% if products %}
+      <table>
+        <thead>
+          <tr>
+            <td>Название</td>
+            <td>Описание</td>
+            <td>Цена</td>
+            <td>Картинка</td>
+            <td>Brand</td>
+        </thead>
+        <tbody>
+          {% for p in products %}
+          <tr>
+            <td><a href="{% url 'main:product_detail_page' p.id %}">{{ p.name }}</a></td>
+            <td>{{ p.description }}</td>
+            <td>{{ p.cost }} {{ p.cost_type.name }}</td>
+            <td><img src="{{MEDIA_URL}}{{p.image}}" alt=""></td>
+            <td>{{ p.brand.name }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+
+
+
+      </table>
+
+      {% else %}
+        <p>Пока, что нет товаров</p>
+        {% endif %}
+    </div>
+
+  </div>
+
+ {% endblock %}

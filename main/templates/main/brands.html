@@ -1,0 +1,39 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Products Page
+{% endblock %}
+
+{% block body %}
+
+  {% include "main/navigation_bar.html" %}
+
+  <div class="row">
+    <div class="col-sm-12">
+      {% if brands %}
+      <table>
+        <thead>
+          <tr>
+            <td>Название</td>
+        </thead>
+        <tbody>
+          {% for b in brands %}
+          <tr>
+            <td><a href="{% url 'main:brand_products' b.id %}">{{ b.name }}</a></td>
+
+          </tr>
+          {% endfor %}
+        </tbody>
+
+
+
+      </table>
+
+      {% else %}
+        <p>Пока, что нет товаров</p>
+        {% endif %}
+    </div>
+
+  </div>
+
+ {% endblock %}
